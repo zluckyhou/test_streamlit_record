@@ -4,6 +4,7 @@ import re
 import streamlit as st
 import os
 import logging
+import time
 
 
 
@@ -52,6 +53,18 @@ with st.container(border=True):
 			f.write(st.session_state.record_audio_data)		
 		st.session_state.audio_file = output_file_path
 		logger.info(f"audio file: {st.session_state.audio_file}")
+
+
+
+spinner_placeholder = st.empty()
+inner_spinner_placeholder = st.empty()
+with spinner_placeholder:
+	with st.spinner("waiting for time sleep"):
+		time.sleep(3)
+		with inner_spinner_placeholder:
+			with st.spinner("running transcript..."):
+				time.sleep(3)
+
 
 if st.session_state.audio_file:
 	st.markdown("display audio file")
