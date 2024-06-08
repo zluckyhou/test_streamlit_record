@@ -54,7 +54,7 @@ with st.container(border=True):
 		st.session_state.audio_file = output_file_path
 		logger.info(f"audio file: {st.session_state.audio_file}")
 
-
+st.markdown("test for spinner")
 
 spinner_placeholder = st.empty()
 inner_spinner_placeholder = st.empty()
