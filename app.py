@@ -24,6 +24,15 @@ logger.addHandler(console_handler)
 
 
 
+
+import streamlit.components.v1 as components
+
+# embed streamlit docs in a streamlit app
+components.iframe("https://whisperflow.streamlit.app/", height=500)
+
+
+
+
 if "record_audio_data" not in st.session_state:
     st.session_state.record_audio_data = ''
 if "audio_file" not in st.session_state:
